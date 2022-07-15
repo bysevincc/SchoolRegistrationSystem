@@ -29,3 +29,5 @@ docker-compose up -d
 endpoint
 http://localhost:8080
 
+Please follow for Example of REST API Endpoints
+SchoolRegistrationSystem/Example Of REST API.txt
