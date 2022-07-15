@@ -1,0 +1,159 @@
+
+////////////////////////////////////STUDENT////////////////////
+list of all students
+Request
+GET http://localhost:8080/api/students
+Response
+[
+{
+"id": 1,
+"studentName": "Sevinc",
+"studentSurname": "Besdas"
+},
+{
+"id": 2,
+"studentName": "Paris",
+"studentSurname": "Hilton"
+}
+]
+
+Add new student
+Request
+POST http://localhost:8080/api/students
+{
+"studentName": "Name",
+"studentSurname": "Surname"
+}
+Response
+{
+"id": 3,
+"studentName": "Name",
+"studentSurname": "Surname"
+}
+Update student by ID
+Request
+PUT http://localhost:8080/api/students/3
+{
+"studentName": "Name2",
+"studentSurname": "Surname2"
+}
+Response
+{
+"id": 3,
+"studentName": "Name2",
+"studentSurname": "Surname2"
+
+Delete student by ID
+Request
+DELETE http://localhost:8080/api/students/3
+
+
+////////////COURSE///////////////////
+list of all courses
+Request
+GET http://localhost:8080/api/courses
+
+Response
+[
+{
+"id": 1,
+"courseName": "Cooking"
+},
+{
+"id": 2,
+"courseName": "Garden"
+},
+{
+"id": 3,
+"courseName": "Docker"
+}
+]
+
+Add new course
+Request
+POST http://localhost:8080/api/courses
+{
+"courseName": "Python"
+}
+Response
+{
+"id": 4,
+"courseName": "Python"
+}
+
+Update course by ID
+Request
+PUT http://localhost:8080/api/courses/4
+{
+"courseName": ".NET"
+}
+Response
+{
+"id": 4,
+"courseName": ".NET"
+}
+}
+Delete course by ID
+Request
+DELETE http://localhost:8080/api/courses/4
+
+
+///////////////////REPORTFORADMIN/////////////
+
+Register student to course by ID
+Request
+POST http://localhost:8080/api/students/2/register/3
+
+Response
+{
+    "id": 2,
+    "studentName": "Paris",
+    "studentSurname": "Hilton"
+}
+
+get list of students registered on course by ID
+Request
+GET http://localhost:8080/api/reports/course/1/students
+Response
+[
+{
+"id": 1,
+"studentName": "Sevinc",
+"studentSurname": "Besdas"
+},
+"id": 2,
+"studentName": "Paris",
+"studentSurname": "Hilton"
+]
+
+get list of courses registered by student by ID
+Request
+GET http://localhost:8080/api/reports/student/1/courses
+Response
+[
+{
+"id": 1,
+"courseName": "Cooking"
+},
+{
+"id": 2,
+"courseName": "Garden"
+},
+{
+"id": 3,
+"courseName": "Docker"
+}
+]
+
+get list of all students without any courses
+Request
+GET http://localhost:8080/api/reports/studentsWithoutAnyCourses
+Response
+[No content]
+
+get list of all courses without any students
+Request
+GET http://localhost:8080/api/reports/coursesWithoutAnyStudents
+Response
+[No content]
+}
